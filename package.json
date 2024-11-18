@@ -4,7 +4,7 @@
   "description": "A Nuxt module that adds Scroll Animation Library",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/CobaltWeb/nuxt-sal.git"
+    "url": "git+https://github.com/MrEraxd/nuxt-sal"
   },
   "license": "MIT",
   "type": "module",
@@ -48,5 +48,9 @@
     "typescript": "latest",
     "vitest": "^2.1.5",
     "vue-tsc": "^2.1.10"
+  },
+  "author": "Konrad Kotfisz",
+  "bugs": {
+    "url": "https://github.com/MrEraxd/nuxt-sal/issues"
   }
 }
