@@ -32,18 +32,18 @@ That's it! You can now use sal.js in your Nuxt app ✨
 
 ## Configuration
 
-You can configure nuxt-sal in `nuxt.config.js` with the `sal`
+You can configure nuxt-sal in `nuxt.config.js` with the `sal`. Read more here: [Sal.js docs](https://github.com/mciastek/sal?tab=readme-ov-file#options)
 
 ```js
 export default defineNuxtConfig({
   aos: {
-    // Percentage of an element's area that needs to be visible to launch animation (see docs)
+    // Percentage of an element's area that needs to be visible to launch animation.
     threshold: 0.5,
-    // Defines if animation needs to be launched once. Can be overridden, see Repeating Animation.
+    // Defines if animation needs to be launched once.
     once: true,
     // Flag (or a function returning boolean) for disabling animations
     disabled: false,
-    // The element that is used as the viewport for checking visibility of the target (see docs)
+    // The element that is used as the viewport for checking visibility of the target
     root: window,
     // Selector of the elements to be animated
     selector: "[data-sal]",
@@ -51,11 +51,11 @@ export default defineNuxtConfig({
     animateClassName: "sal-animate",
     // 	Class name which defines the disabled state
     disabledClassName: "sal-disabled",
-    // Corresponds to root's bounding box margin (see docs)
+    // Corresponds to root's bounding box margin
     rootMargin: "0% 50%",
-    // Enter event name (see Events)
+    // Enter event name
     enterEventName: "sal:in",
-    // Exit event name (see Events)
+    // Exit event name
     exitEventName: "sal:out",
   },
 });
@@ -63,14 +63,14 @@ export default defineNuxtConfig({
 
 ## API
 
-You can also use SAL instance
+You can also use SAL instance. Read more here: [Sal.js docs](https://github.com/mciastek/sal?tab=readme-ov-file#options)
 
 ```js
 const { $salInstance } = useNuxtApp();
 
 $salInstance.enable(); // Enables animations
 $salInstance.disable(); // Disables animations
-$salInstance.reset(); // Resets instance and allows to pass new options (see Options)
+$salInstance.reset(); // Resets instance and allows to pass new options
 $salInstance.update(); // Updates observer with new elements to animated. Useful for dynamically injected HTML.
 ```
 
