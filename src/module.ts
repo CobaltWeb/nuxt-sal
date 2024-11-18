@@ -3,48 +3,45 @@ import {
   addPlugin,
   createResolver,
   useLogger,
-} from "@nuxt/kit";
-import type { Options as SalOptions } from "sal.js";
-import { name, version } from "../package.json";
+} from '@nuxt/kit'
+import type { Options as SalOptions } from 'sal.js'
+import { name, version } from '../package.json'
 
-// Module options TypeScript interface definition
-export interface ModuleOptions extends Partial<SalOptions> {}
-
-export default defineNuxtModule<ModuleOptions>({
+export default defineNuxtModule<Partial<SalOptions>>({
   meta: {
     name,
     version,
-    configKey: "sal",
+    configKey: 'sal',
     compatibility: {
-      nuxt: ">=3.0.0",
+      nuxt: '>=3.0.0',
     },
   },
   // Default configuration options of the Nuxt module
   defaults: {},
   hooks: {
-    "vite:extendConfig": (config) => {
-      config.optimizeDeps ||= {};
-      config.optimizeDeps.include ||= [];
-      config.optimizeDeps.include.push("sal");
+    'vite:extendConfig': (config) => {
+      config.optimizeDeps ||= {}
+      config.optimizeDeps.include ||= []
+      config.optimizeDeps.include.push('sal')
     },
   },
   setup(options, nuxt) {
-    const logger = useLogger("nuxt-sal");
-    const resolver = createResolver(import.meta.url);
+    const logger = useLogger('nuxt-sal')
+    const resolver = createResolver(import.meta.url)
 
-    logger.info("🚀 Setting up nuxt-sal");
+    logger.info('🚀 Setting up nuxt-sal')
 
-    nuxt.options.runtimeConfig.public.sal = options || {};
+    nuxt.options.runtimeConfig.public.sal = options || {}
 
-    nuxt.options.build.transpile ||= [];
-    nuxt.options.build.transpile.push("sal");
+    nuxt.options.build.transpile ||= []
+    nuxt.options.build.transpile.push('sal')
 
-    nuxt.options.alias["#sal"] = resolver.resolve("./runtime");
+    nuxt.options.alias['#sal'] = resolver.resolve('./runtime')
 
     // Do not add the extension since the `.ts` will be transpiled to `.mjs` after `npm run prepack`
     addPlugin({
-      src: resolver.resolve("./runtime/plugin"),
-      mode: "client",
-    });
+      src: resolver.resolve('./runtime/plugin'),
+      mode: 'client',
+    })
   },
-});
+})
