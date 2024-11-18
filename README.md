@@ -36,7 +36,7 @@ You can configure nuxt-sal in `nuxt.config.js` with the `sal`. Read more here: [
 
 ```js
 export default defineNuxtConfig({
-  aos: {
+  sal: {
     // Percentage of an element's area that needs to be visible to launch animation.
     threshold: 0.5,
     // Defines if animation needs to be launched once.
