@@ -22,7 +22,7 @@ export default defineNuxtModule<Partial<SalOptions>>({
     'vite:extendConfig': (config) => {
       config.optimizeDeps ||= {}
       config.optimizeDeps.include ||= []
-      config.optimizeDeps.include.push('sal')
+      config.optimizeDeps.include.push('sal.js')
     },
   },
   setup(options, nuxt) {
@@ -34,7 +34,7 @@ export default defineNuxtModule<Partial<SalOptions>>({
     nuxt.options.runtimeConfig.public.sal = options || {}
 
     nuxt.options.build.transpile ||= []
-    nuxt.options.build.transpile.push('sal')
+    nuxt.options.build.transpile.push('sal.js')
 
     nuxt.options.alias['#sal'] = resolver.resolve('./runtime')
 
