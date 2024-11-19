@@ -30,6 +30,14 @@ npx nuxi module add nuxt-sal
 
 That's it! You can now use sal.js in your Nuxt app ✨
 
+## Basic usage
+
+```html
+<div data-sal="fade"></div>
+```
+
+List of all available animations is available in [Sal.js docs](https://github.com/mciastek/sal?tab=readme-ov-file#animations)
+
 ## Configuration
 
 You can configure nuxt-sal in `nuxt.config.js` with the `sal`. Read more here: [Sal.js docs](https://github.com/mciastek/sal?tab=readme-ov-file#options)
